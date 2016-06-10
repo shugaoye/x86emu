@@ -63,3 +63,22 @@
 #    device/generic/goldfish/ueventd.ranchu.rc:root/ueventd.ranchu.rc \
 
 
+##############################################################
+# Kernel build
+##############################################################
+TARGET_KERNEL_SOURCE := kernel
+TARGET_KERNEL_CONFIG := i386_ranchu_defconfig
+TARGET_ARCH := x86
+
+PRODUCT_OUT ?= out/target/product/x86
+
+include $(TARGET_KERNEL_SOURCE)/AndroidKernel.mk
+
+# define build targets for kernel
+.PHONY: $(TARGET_PREBUILT_KERNEL)
+
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+
+PRODUCT_COPY_FILES += \
+     $(LOCAL_KERNEL):kernel \
+
