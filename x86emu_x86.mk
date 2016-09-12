@@ -20,4 +20,4 @@ $(call inherit-product, $(LOCAL_PATH)/x86emu_base.mk)
 PRODUCT_BRAND := x86emu_x86
 PRODUCT_NAME := x86emu_x86
 PRODUCT_DEVICE = x86emu
-PRODUCT_MODEL := Android Emulator for x86
+PRODUCT_MODEL := x86emu_x86_ch4

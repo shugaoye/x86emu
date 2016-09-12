@@ -1,5 +1,5 @@
 #
-# Copyright 2014 The Android Open-Source Project
+# Copyright 2016 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ $(call inherit-product, $(LOCAL_PATH)/x86emu_base.mk)
 PRODUCT_BRAND := x86emu_x86_64
 PRODUCT_NAME := x86emu_x86_64
 PRODUCT_DEVICE = x86emu
-PRODUCT_MODEL := Android Emulator for x86_64
+PRODUCT_MODEL := x86emu_x86_64_ch4
 
 TARGET_SUPPORTS_32_BIT_APPS := true
 TARGET_SUPPORTS_64_BIT_APPS := true
