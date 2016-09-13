@@ -13,27 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-##############################################################
-# Fix ranchu build issue
-##############################################################
-PRODUCT_PACKAGES += \
-    gralloc.ranchu \
-    camera.ranchu \
-    camera.ranchu.jpeg \
-    lights.ranchu \
-    gps.ranchu \
-    fingerprint.ranchu \
-    audio.primary.ranchu \
-    vibrator.ranchu \
-    sensors.ranchu
-
 ##############################################################
 # Kernel build
 ##############################################################
 TARGET_KERNEL_SOURCE := kernel
-TARGET_KERNEL_CONFIG := i386_ranchu_defconfig
-TARGET_ARCH := x86
 
 PRODUCT_OUT ?= out/target/product/x86emu
 

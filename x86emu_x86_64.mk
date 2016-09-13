@@ -14,7 +14,6 @@
 # limitations under the License.
 #
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_x86_64.mk)
-$(call inherit-product, $(LOCAL_PATH)/x86emu_base.mk)
 
 # Overrides
 PRODUCT_BRAND := x86emu_x86_64
@@ -24,3 +23,7 @@ PRODUCT_MODEL := x86emu_x86_64_ch4
 
 TARGET_SUPPORTS_32_BIT_APPS := true
 TARGET_SUPPORTS_64_BIT_APPS := true
+
+TARGET_ARCH := x86_64
+TARGET_KERNEL_CONFIG := x86_64_ranchu_defconfig
+$(call inherit-product, $(LOCAL_PATH)/x86emu_base.mk)

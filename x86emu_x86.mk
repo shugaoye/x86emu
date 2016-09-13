@@ -14,10 +14,13 @@
 # limitations under the License.
 #
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
-$(call inherit-product, $(LOCAL_PATH)/x86emu_base.mk)
 
 # Overrides
 PRODUCT_BRAND := x86emu_x86
 PRODUCT_NAME := x86emu_x86
 PRODUCT_DEVICE = x86emu
 PRODUCT_MODEL := x86emu_x86_ch4
+
+TARGET_ARCH := x86
+TARGET_KERNEL_CONFIG := i386_ranchu_defconfig
+$(call inherit-product, $(LOCAL_PATH)/x86emu_base.mk)
