@@ -31,10 +31,17 @@ x86emu:
 snod:
 	cd ../../..;make snod
 
-initrd_img:
+initrd:
 	cd ../../..;make initrd USE_SQUASHFS=0
 
 ramdisk:
+	cd ../../..;make -j4
+
+clean-ramdisk:
 	rm ${OUT}/ramdisk.img
 	rm -rf ${OUT}/root
-	cd ../../..;make -j4
+
+clean-initrd:
+	rm ${OUT}/initrd.img
+	rm -rf ${OUT}/installer
+
