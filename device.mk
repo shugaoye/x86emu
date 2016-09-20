@@ -29,3 +29,5 @@ PRODUCT_PACKAGES += \
     vibrator.ranchu \
     sensors.ranchu
 
+# Get native bridge settings
+$(call inherit-product, device/generic/common/nativebridge/nativebridge.mk)
