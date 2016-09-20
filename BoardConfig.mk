@@ -62,3 +62,7 @@ BOARD_SEPOLICY_DIRS += \
         build/target/board/generic_x86/sepolicy
 
 BOARD_GPU_DRIVERS ?= goldfish
+
+# houdini
+
+BUILD_ARM_FOR_X86 := $(WITH_NATIVE_BRIDGE)
