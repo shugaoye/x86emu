@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-$(call inherit-product, $(SRC_TARGET_DIR)/board/generic_x86/device.mk)
 
 ##############################################################
 # Fix ranchu build issue
@@ -29,3 +28,4 @@ PRODUCT_PACKAGES += \
     vibrator.ranchu \
     sensors.ranchu
 
+$(call inherit-product, $(SRC_TARGET_DIR)/board/generic_x86/device.mk)
