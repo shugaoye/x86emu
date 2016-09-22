@@ -26,6 +26,16 @@ TARGET_ARCH := x86
 TARGET_ARCH_VARIANT := x86
 TARGET_PRELINK_MODULE := false
 
+# houdini
+# Native Bridge ABI List
+NATIVE_BRIDGE_ABI_LIST_32_BIT := armeabi-v7a armeabi
+NATIVE_BRIDGE_ABI_LIST_64_BIT := arm64-v8a
+TARGET_CPU_ABI_LIST_32_BIT := $(TARGET_CPU_ABI) $(TARGET_CPU_ABI2) $(NATIVE_BRIDGE_ABI_LIST_32_BIT)
+TARGET_CPU_ABI_LIST := $(TARGET_CPU_ABI_LIST_32_BIT)
+
+BUILD_ARM_FOR_X86 := $(WITH_NATIVE_BRIDGE)
+
+
 # The IA emulator (qemu) uses the Goldfish devices
 HAVE_HTC_AUDIO_DRIVER := true
 BOARD_USES_GENERIC_AUDIO := true
@@ -65,8 +75,3 @@ BOARD_SEPOLICY_DIRS += \
         build/target/board/generic_x86/sepolicy
 
 BOARD_GPU_DRIVERS ?= goldfish
-
-# houdini
-
-BUILD_ARM_FOR_X86 := $(WITH_NATIVE_BRIDGE)
-
