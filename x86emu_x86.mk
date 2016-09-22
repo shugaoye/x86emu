@@ -24,3 +24,5 @@ PRODUCT_MODEL := x86emu_x86_ch5
 TARGET_ARCH := x86
 TARGET_KERNEL_CONFIG := i386_ranchu_defconfig
 $(call inherit-product, $(LOCAL_PATH)/x86emu_base.mk)
+
+$(call inherit-product, device/generic/x86emu/device.mk)

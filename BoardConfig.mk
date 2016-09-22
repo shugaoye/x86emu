@@ -48,6 +48,7 @@ BUILD_EMULATOR_OPENGL := true
 # Build and enable the OpenGL ES View renderer. When running on the emulator,
 # the GLES renderer disables itself if host GL acceleration isn't available.
 USE_OPENGL_RENDERER := true
+BUILD_EMULATOR_OPENGL_DRIVER := true
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1342177280  # 1.25 GB
@@ -56,6 +57,8 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 69206016
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 512
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
+
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 BOARD_SEPOLICY_DIRS += \
         build/target/board/generic/sepolicy \
@@ -66,3 +69,4 @@ BOARD_GPU_DRIVERS ?= goldfish
 # houdini
 
 BUILD_ARM_FOR_X86 := $(WITH_NATIVE_BRIDGE)
+
