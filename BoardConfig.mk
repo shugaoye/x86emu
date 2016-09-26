@@ -74,4 +74,4 @@ BOARD_SEPOLICY_DIRS += \
         build/target/board/generic/sepolicy \
         build/target/board/generic_x86/sepolicy
 
-BOARD_GPU_DRIVERS ?= goldfish
+BOARD_GPU_DRIVERS ?= vmwgfx

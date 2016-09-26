@@ -29,5 +29,5 @@ PRODUCT_PACKAGES += \
     sensors.ranchu
 
 # Get native bridge settings
-$(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
+$(call inherit-product-if-exists,device/generic/common/nativebridge/nativebridge.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/board/generic_x86/device.mk)
