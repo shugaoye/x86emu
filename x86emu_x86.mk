@@ -25,5 +25,19 @@ PRODUCT_MODEL := x86emu_x86_ch5
 
 TARGET_ARCH := x86
 TARGET_KERNEL_CONFIG := i386_ranchu_defconfig
+
 $(call inherit-product, $(LOCAL_PATH)/x86emu_base.mk)
 
+PRODUCT_PROPERTY_OVERRIDES := \
+    persist.sys.nativebridge=1 \
+
+NB_PATH := $(LOCAL_PATH)
+NB_LIB_PATH := system/lib
+NB_ARM_PATH := $(NB_LIB_PATH)/arm
+NB_NBLIB_PATH := $(NB_ARM_PATH)/nb
+NB_BIN_PATH := system/bin
+
+PRODUCT_COPY_FILES += $(foreach LIB, $(filter-out nb liblog_legacy.so libbinder_legacy.so, \
+      $(notdir $(wildcard $(NB_PATH)/$(NB_ARM_PATH)/*))), $(NB_PATH)/$(NB_ARM_PATH)/$(LIB):$(NB_ARM_PATH)/$(LIB):intel)
+PRODUCT_COPY_FILES += $(foreach NB, $(filter-out libbinder_legacy.so, $(notdir $(wildcard $(NB_PATH)/$(NB_NBLIB_PATH)/*))), \
+      $(NB_PATH)/$(NB_NBLIB_PATH)/$(NB):$(NB_NBLIB_PATH)/$(NB):intel)
