@@ -50,9 +50,6 @@ BUILD_EMULATOR_OPENGL := true
 USE_OPENGL_RENDERER := true
 BUILD_EMULATOR_OPENGL_DRIVER := true
 
-# share the same one across all mini-emulators
-BOARD_EGL_CFG := device/generic/goldfish/opengl/system/egl/egl.cfg
-
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1342177280  # 1.25 GB
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 576716800
@@ -67,4 +64,4 @@ BOARD_SEPOLICY_DIRS += \
         build/target/board/generic/sepolicy \
         build/target/board/generic_x86/sepolicy
 
-BOARD_GPU_DRIVERS ?= goldfish
+BOARD_GPU_DRIVERS ?= vmwgfx
