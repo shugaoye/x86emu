@@ -34,6 +34,9 @@ snod:
 initrd:
 	cd ../../..;make initrd USE_SQUASHFS=0
 
+qcow2_img:
+	cd ../../..;make qcow2_img USE_SQUASHFS=0
+
 ramdisk:
 	cd ../../..;make -j4
 
