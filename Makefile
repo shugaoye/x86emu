@@ -31,8 +31,10 @@ x86emu:
 snod:
 	cd ../../..;make snod
 
-initrd:
-	cd ../../..;make initrd USE_SQUASHFS=0
+qcow2_img:
+	mkdir -p ${OUT}/system/x86emu_ch07
+	cp ${OUT}/ramdisk.img ${OUT}/system/x86emu_ch07
+	cd ../../..;make qcow2_img USE_SQUASHFS=0
 
 ramdisk:
 	cd ../../..;make -j4
