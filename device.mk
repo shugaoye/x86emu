@@ -28,4 +28,27 @@ PRODUCT_PACKAGES += \
     vibrator.ranchu \
     sensors.ranchu
 
+# Wi-Fi support
+PRODUCT_PROPERTY_OVERRIDES := \
+    wifi.interface=eth1
+
+PRODUCT_PACKAGES += \
+    libwpa_client \
+    hostapd \
+    dhcpcd.conf \
+    wlutil \
+    wpa_supplicant \
+    wpa_supplicant.conf
+
+# These are the hardware-specific features
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml
+
+# For android_filesystem_config.h
+PRODUCT_PACKAGES += \
+   fs_config_files
+
+PRODUCT_COPY_FILES += \
+    device/generic/x86emu/wpa_supplicant.conf:data/misc/wifi/wpa_supplicant.conf \
+
 $(call inherit-product, $(SRC_TARGET_DIR)/board/generic_x86/device.mk)

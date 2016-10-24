@@ -65,3 +65,10 @@ BOARD_SEPOLICY_DIRS += \
         build/target/board/generic_x86/sepolicy
 
 BOARD_GPU_DRIVERS ?= vmwgfx
+
+#
+# Additional hardware support
+# Wifi
+BOARD_WPA_SUPPLICANT_DRIVER := WIRED
+WPA_SUPPLICANT_VERSION      := VER_0_8_X VER_2_1_DEVEL
+BOARD_WLAN_DEVICE           := eth1
