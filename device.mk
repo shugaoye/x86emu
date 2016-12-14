@@ -14,18 +14,5 @@
 # limitations under the License.
 #
 
-##############################################################
-# Fix ranchu build issue
-##############################################################
-PRODUCT_PACKAGES += \
-    gralloc.ranchu \
-    camera.ranchu \
-    camera.ranchu.jpeg \
-    lights.ranchu \
-    gps.ranchu \
-    fingerprint.ranchu \
-    audio.primary.ranchu \
-    vibrator.ranchu \
-    sensors.ranchu
 
 $(call inherit-product, $(SRC_TARGET_DIR)/board/generic_x86/device.mk)
