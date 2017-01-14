@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
 PRODUCT_BRAND := x86emu_x86
 PRODUCT_NAME := x86emu_x86
 PRODUCT_DEVICE = x86emu
-PRODUCT_MODEL := x86emu_android-7.1.1_r4_ch04
+PRODUCT_MODEL := x86emu_android-7.1.1_r4_ch06
 
 TARGET_ARCH := x86
 TARGET_KERNEL_CONFIG := i386_ranchu_defconfig
