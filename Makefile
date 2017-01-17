@@ -22,6 +22,8 @@
 #
 #******************************************************************************
 
+MKBOOTFS := mkbootfs
+
 all:
 	cd ../../..;make -j8 showcommands 2>&1 | tee x86emu-`date +%Y%m%d`.txt
 
@@ -34,11 +36,20 @@ snod:
 initrd:
 	cd ../../..;make initrd USE_SQUASHFS=0
 
+installer:
+	cd ../../..;$(MKBOOTFS) ${OUT}/installer | gzip -9 > ${OUT}/initrd.img
+
 qcow2_img:
 	cd ../../..;make qcow2_img USE_SQUASHFS=0
 
 ramdisk:
-	cd ../../..;make -j4
+	cd ../../..;$(MKBOOTFS) -d ${OUT}/system ${OUT}/root | minigzip > ${OUT}/ramdisk.img
+
+kernel-config:
+	cd ../../..;make -j2 -C kernel O=../out/target/product/x86emu/obj/KERNEL_OBJ ARCH=x86 i386_ranchu_defconfig
+
+kernel:
+	cd ../../..;make -j2 -C kernel O=../out/target/product/x86emu/obj/KERNEL_OBJ ARCH=x86
 
 clean-ramdisk:
 	rm ${OUT}/ramdisk.img
@@ -48,3 +59,9 @@ clean-initrd:
 	rm ${OUT}/initrd.img
 	rm -rf ${OUT}/installer
 
+clean-kernel:
+	cd ../../..;make -j2 -C kernel O=../out/target/product/x86emu/obj/KERNEL_OBJ ARCH=x86 clean
+
+clean-qcow2_img:
+	rm ${OUT}/x86emu*.img
+	rm -rf ${OUT}/x86emu_tmp
