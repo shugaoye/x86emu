@@ -30,4 +30,10 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
-# BOARD_GPU_DRIVERS ?= vmwgfx
+#
+# Additional hardware support
+# Wifi
+BOARD_WPA_SUPPLICANT_DRIVER := WIRED
+WPA_SUPPLICANT_VERSION      := VER_0_8_X VER_2_1_DEVEL
+BOARD_WLAN_DEVICE           := eth1
+

@@ -33,14 +33,13 @@ x86emu:
 snod:
 	cd ../../..;make snod
 
-initrd:
-	cd ../../..;make initrd USE_SQUASHFS=0
+qcow2_img:
+	mkdir -p ${OUT}/system/x86emu_ch07
+	cp ${OUT}/ramdisk.img ${OUT}/system/x86emu_ch07
+	cd ../../..;make qcow2_img USE_SQUASHFS=0
 
 installer:
 	cd ../../..;$(MKBOOTFS) ${OUT}/installer | gzip -9 > ${OUT}/initrd.img
-
-qcow2_img:
-	cd ../../..;make qcow2_img USE_SQUASHFS=0
 
 ramdisk:
 	cd ../../..;$(MKBOOTFS) -d ${OUT}/system ${OUT}/root | minigzip > ${OUT}/ramdisk.img
@@ -62,6 +61,3 @@ clean-initrd:
 clean-kernel:
 	cd ../../..;make -j2 -C kernel O=../out/target/product/x86emu/obj/KERNEL_OBJ ARCH=x86 clean
 
-clean-qcow2_img:
-	rm ${OUT}/x86emu*.img
-	rm -rf ${OUT}/x86emu_tmp

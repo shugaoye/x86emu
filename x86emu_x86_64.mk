@@ -19,7 +19,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_x86_64.mk)
 PRODUCT_BRAND := x86emu_x86_64
 PRODUCT_NAME := x86emu_x86_64
 PRODUCT_DEVICE = x86emu
-PRODUCT_MODEL := x86emu_x86_64_ch6
+PRODUCT_MODEL := x86emu_x86_64_ch7
 
 TARGET_SUPPORTS_32_BIT_APPS := true
 TARGET_SUPPORTS_64_BIT_APPS := true
