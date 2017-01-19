@@ -20,8 +20,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
     wifi.interface=eth1
 
 PRODUCT_PACKAGES += \
-    dhcpcd \
-    dhcpcd-run-hooks \
+    dhcpcd-6.8.2 \
     libwpa_client \
     hostapd \
     dhcpcd.conf \
@@ -39,5 +38,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     device/generic/x86emu/wpa_supplicant.conf:data/misc/wifi/wpa_supplicant.conf \
+    device/generic/x86emu/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
 
 $(call inherit-product, $(SRC_TARGET_DIR)/board/generic_x86/device.mk)
