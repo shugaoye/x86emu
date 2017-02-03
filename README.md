@@ -1,2 +1,2 @@
 # x86emu
-The first build is based on android-4.2.2_r1.2.
+This is a device folder for the book - Android System Programming. Please refer to the tags for each chapter.
