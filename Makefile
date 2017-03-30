@@ -35,7 +35,7 @@ initrd:
 	cd ../../..;make initrd USE_SQUASHFS=0
 
 ramdisk:
-	cd ../../..;make -j4
+	cd ../../..;out/host/linux-x86/bin/mkbootfs ${OUT}/system ${OUT}/root | out/host/linux-x86/bin/minigzip > ${OUT}/ramdisk.img
 
 clean-ramdisk:
 	rm ${OUT}/ramdisk.img
